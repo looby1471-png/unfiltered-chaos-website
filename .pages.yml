@@ -1,0 +1,82 @@
+media: media
+content:
+  - name: homepage
+    label: UNFILTERED CHAOS · Edit your website
+    type: file
+    path: content/site.json
+    format: json
+    operations:
+      create: false
+      rename: false
+      delete: false
+    fields:
+      - name: headline
+        label: Main welcome heading
+        type: string
+        required: true
+      - name: intro
+        label: Welcome message
+        type: text
+        required: true
+      - name: shop_label
+        label: Shop button wording
+        type: string
+        required: true
+      - name: shop_url
+        label: Official Farmasi shop URL
+        type: string
+        description: Paste the full URL beginning https://
+      - name: joining_label
+        label: Joining button wording
+        type: string
+        required: true
+      - name: joining_url
+        label: Official Farmasi team joining URL
+        type: string
+        description: Paste the full URL beginning https://
+      - name: facebook_label
+        label: Facebook button wording
+        type: string
+        required: true
+      - name: facebook_url
+        label: Your Facebook Page or Group URL
+        type: string
+      - name: announcement
+        label: Small notice on homepage (optional)
+        type: text
+        description: Leave empty for no announcement
+      - name: extra_buttons
+        label: Extra buttons (for later)
+        type: object
+        list:
+          max: 8
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        description: Nothing here appears unless you enable it
+        fields:
+          - name: label
+            label: Text on button
+            type: string
+          - name: url
+            label: Destination URL
+            type: string
+          - name: enabled
+            label: Show button to customers
+            type: boolean
+      - name: site_title
+        label: Google page title
+        type: string
+        required: true
+      - name: meta_description
+        label: Google page description
+        type: text
+        required: true
+      - name: site_url
+        label: Public website address (add after domain setup)
+        type: string
+        description: Leave empty while testing; add full https:// address at launch
+      - name: indexing_enabled
+        label: Allow Google to index this website?
+        type: boolean
+        description: Keep OFF for the test website. Switch ON only when you are ready to launch publicly.
